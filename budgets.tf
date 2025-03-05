@@ -27,10 +27,10 @@ resource "google_billing_budget" "minimal" {
   }
 
 
-  all_updates_rule {
-    monitoring_notification_channels = [
-      google_monitoring_notification_channel.main.id,
-    ]
-    disable_default_iam_recipients = true
-  }
+  # all_updates_rule {
+  #   monitoring_notification_channels = [
+  #     google_monitoring_notification_channel.main.id,
+  #   ]
+  #   disable_default_iam_recipients = true
+  # }
 }
