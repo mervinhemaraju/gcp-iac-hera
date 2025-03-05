@@ -1,11 +1,11 @@
-resource "google_monitoring_notification_channel" "main" {
-  display_name = "main-notification-channel"
-  type         = "email"
+# resource "google_monitoring_notification_channel" "main" {
+#   display_name = "main-notification-channel"
+#   type         = "email"
 
-  labels = {
-    email_address = "mervinhemaraju16@gmail.com"
-  }
-}
+#   labels = {
+#     email_address = "mervinhemaraju16@gmail.com"
+#   }
+# }
 
 resource "google_billing_budget" "minimal" {
   billing_account = data.google_billing_account.this.id
