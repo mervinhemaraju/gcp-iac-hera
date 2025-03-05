@@ -11,12 +11,9 @@ resource "google_iam_workload_identity_pool_provider" "github" {
   display_name                       = "github"
   description                        = "GitHub Actions identity pool provider."
   disabled                           = true
-  #   attribute_condition = <<EOT
-  #     assertion.repository_owner_id == "123456789" &&
-  #     attribute.repository == "gh-org/gh-repo" &&
-  #     assertion.ref == "refs/heads/main" &&
-  #     assertion.ref_type == "branch"
-  # EOT
+  attribute_condition                = <<EOT
+      attribute.repository == "mervinhemaraju/glamu-iac"
+  EOT
   attribute_mapping = {
     "google.subject"       = "assertion.sub"
     "attribute.actor"      = "assertion.actor"
