@@ -1,13 +1,6 @@
-# resource "google_monitoring_notification_channel" "main" {
-#   display_name = "main-notification-channel"
-#   type         = "email"
-
-#   labels = {
-#     email_address = "mervinhemaraju16@gmail.com"
-#   }
-# }
-
 resource "google_billing_budget" "minimal" {
+  provider = google.no_user_project_override
+
   billing_account = data.google_billing_account.this.id
   display_name    = "minimal-spend-budget"
   amount {
