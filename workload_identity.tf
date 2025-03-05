@@ -10,7 +10,6 @@ resource "google_iam_workload_identity_pool_provider" "github" {
   workload_identity_pool_provider_id = "github-provider"
   display_name                       = "github"
   description                        = "GitHub Actions identity pool provider."
-  disabled                           = true
   attribute_condition                = <<EOT
       attribute.repository == "mervinhemaraju/glamu-iac"
   EOT
