@@ -2,7 +2,7 @@
 resource "google_iam_workload_identity_pool" "github" {
   workload_identity_pool_id = "github-pool"
   display_name              = "github-pool"
-  project                   = google_project.this.id
+  project                   = google_project.this.project_id
 }
 
 # resource "google_iam_workload_identity_pool_provider" "github" {
