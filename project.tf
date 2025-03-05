@@ -7,5 +7,4 @@ resource "google_project" "this" {
 
   org_id          = data.google_organization.mervinhemaraju.org_id
   billing_account = data.google_billing_account.this.id
-
 }
