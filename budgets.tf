@@ -16,21 +16,25 @@ resource "google_billing_budget" "minimal" {
       units         = "10"
     }
   }
+
+  // Actual thresholds
   threshold_rules {
-    threshold_percent = 10
+    threshold_percent = 0.1
   }
   threshold_rules {
-    threshold_percent = 50
+    threshold_percent = 0.5
   }
   threshold_rules {
-    threshold_percent = 100
+    threshold_percent = 1
   }
 
-
-  # all_updates_rule {
-  #   monitoring_notification_channels = [
-  #     google_monitoring_notification_channel.main.id,
-  #   ]
-  #   disable_default_iam_recipients = true
-  # }
+  // Forecasted thresholds
+  threshold_rules {
+    threshold_percent = 0.5
+    spend_basis       = "FORECASTED_SPEND"
+  }
+  threshold_rules {
+    threshold_percent = 1
+    spend_basis       = "FORECASTED_SPEND"
+  }
 }
