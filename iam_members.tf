@@ -8,7 +8,7 @@ module "owners" {
   source = "./modules/owners"
   org_id = data.google_organization.mervinhemaraju.org_id
   members = [
-    "mervinhemaraju16@gmail.com",
-    "superadmin@mervinhemaraju.com"
+    "user:mervinhemaraju16@gmail.com",
+    "user:superadmin@mervinhemaraju.com"
   ]
 }
