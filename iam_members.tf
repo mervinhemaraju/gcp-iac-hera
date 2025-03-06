@@ -1,6 +1,6 @@
 // Org Administrators
 module "org_administrators" {
-  source  = "./modules/org_admin"
+  source  = "./modules/iam_org_admin"
   org_id  = data.google_organization.mervinhemaraju.org_id
   members = ["serviceAccount:${google_service_account.github.email}"]
 }
@@ -8,7 +8,7 @@ module "org_administrators" {
 
 // Owners
 module "owners" {
-  source = "./modules/owners"
+  source = "./modules/iam_owners"
   org_id = data.google_organization.mervinhemaraju.org_id
   members = [
     "user:mervinhemaraju16@gmail.com",
