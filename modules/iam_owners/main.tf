@@ -1,6 +1,6 @@
 
 # Create Owner role binding
-resource "google_organizatiogoogle_organization_iam_membern_iam_binding" "owner" {
+resource "google_organization_iam_member" "owner" {
   count  = length(var.members)
   org_id = var.org_id
   role   = "roles/owner"
