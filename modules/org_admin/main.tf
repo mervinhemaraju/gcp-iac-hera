@@ -1,20 +1,23 @@
-resource "google_organization_iam_binding" "project_creator" {
+resource "google_organization_iam_member" "project_creator" {
+  count  = length(var.members)
   org_id = var.org_id
   role   = "roles/resourcemanager.projectCreator"
 
-  members = var.members
+  member = var.members[count.index]
 }
 
-resource "google_organization_iam_binding" "org_admin" {
+resource "google_organization_iam_member" "org_admin" {
+  count  = length(var.members)
   org_id = var.org_id
   role   = "roles/resourcemanager.organizationAdmin"
 
-  members = var.members
+  member = var.members[count.index]
 }
 
-resource "google_organization_iam_binding" "billing_admin" {
+resource "google_organization_iam_member" "billing_admin" {
+  count  = length(var.members)
   org_id = var.org_id
   role   = "roles/billing.admin"
 
-  members = var.members
+  member = var.members[count.index]
 }
